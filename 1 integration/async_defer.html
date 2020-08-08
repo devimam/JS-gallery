@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript Integration</title>
+
+        <!-- uncomment one by one and see the result -->
+
+        <!-- without async and defer, error, will not work -->
+        <!-- <script type="text/javascript" src="domscript.js"></script> -->
+
+        <!-- with async, may or may not show error, depends on the executing time -->
+        <!-- <script type="text/javascript" src="domscript.js" async></script> -->
+
+        <!-- with defer, will work -->
+        <!-- <script type="text/javascript" src="domscript.js" defer></script> -->
+    </head>
+
+    <body>
+        <div>
+            Sample div element.
+        </div>
+        <div>
+            Sample div element.
+        </div>
+        <div>
+            Sample div element.
+        </div>
+        <div id="mydiv">
+            My div element, background should be colored.
+        </div>
+
+        <!-- adding at the end of body tag, will work -->
+        <!-- <script type="text/javascript" src="domscript.js"></script> -->
+    </body>
+
+</html>
