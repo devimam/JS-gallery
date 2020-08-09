@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript Events</title>
+    </head>
+    <body>
+        <form id="form">
+          <input type="text" placeholder="text input">
+          <input type="password" placeholder="password">
+        </form>
+
+        <script type="text/javascript">
+        const password = document.querySelector('input[type="password"]');
+
+        password.addEventListener('focus',function (event){
+            event.target.style.background = 'pink';
+        });
+
+        password.addEventListener('blur', (event) => {
+            event.target.style.background = '';
+        });
+        </script>
+    </body>
+</html>

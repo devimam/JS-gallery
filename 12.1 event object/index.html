@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript Event Object</title>
+    </head>
+    <body>
+        <div style="height: 400px;border:1px solid red;"></div>
+        <br>
+        <!-- way 1 - inline event handler - bad practice -->
+        <button type="button" onclick="setbg(event, this)">Set Gray Background</button>
+
+        <!-- way 2 - elements onclick property -->
+        <button type="button" id="btn1">Set Green Background</button>
+
+        <!-- way 3 - addEventListener() methdo -->
+        <button type="button" id="btn2">Set Blue Background</button>
+
+        <script type="text/javascript">
+            function setbg(e, self){
+                console.log(self);
+                console.log(this); // global window object
+
+                console.log(e.type);
+                console.log(e.target);
+
+                var elm = document.querySelector('div');
+                elm.style.backgroundColor = 'gray';
+            }
+
+            var btn1elm = document.getElementById('btn1');
+            btn1elm.onclick = function(e){
+                console.log(this);
+
+                console.log(e.type);
+                console.log(e.target);
+
+                var elm = document.querySelector('div');
+                elm.style.backgroundColor = 'green';
+            };
+
+            var btn2elm = document.getElementById('btn2');
+            btn2elm.addEventListener('click', setbluebg);
+
+            function setbluebg(evt){
+                console.log(this);
+
+                console.log(evt.type);
+                console.log(evt.target);
+
+                var elm = document.querySelector('div');
+                elm.style.backgroundColor = 'blue';
+            }
+        </script>
+    </body>
+</html>

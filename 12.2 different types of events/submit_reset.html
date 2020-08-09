@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript Events</title>
+    </head>
+    <body>
+        <form id="form">
+          <label>Test field: <input type="text"></label>
+          <br><br>
+          <button type="submit">Submit form</button>
+          <button type="reset">Reset form</button>
+        </form>
+        <p id="log"></p>
+
+        <script type="text/javascript">
+        function logSubmit(event) {
+          log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
+          event.preventDefault();
+        }
+
+        function logReset(event) {
+          log.textContent = `Form reset! Time stamp: ${event.timeStamp}`;
+        }
+
+        const form = document.getElementById('form');
+        const log = document.getElementById('log');
+        form.addEventListener('submit', logSubmit);
+        form.addEventListener('reset', logReset);
+        </script>
+    </body>
+</html>
